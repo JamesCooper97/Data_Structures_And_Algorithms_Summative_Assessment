@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class Allergy{
-    private List<String> Allergies = List.of(
+    private static List<String> Allergies = List.of(
         "Gelatin",
         "Polyethylene Glycol (PEG)",
         "Polysorbate 80 (PS80)"
@@ -12,12 +12,16 @@ public class Allergy{
     private String name;
     private VaccineType recommendedVaccineType;
 
-    //Function to add allergies if they are more
-    public Allergy(String allergyName, VaccineType vaccine){
-        name = allergyName;
-        recommendedVaccineType = vaccine;
+    //Function to construct an allergy
+    public Allergy(String allergyName, VaccineType vaccineType){
         id = idSeed;
         idSeed++;
+        name = allergyName;
+        recommendedVaccineType = VaccineType.AstraZeneca;
+    }
+
+    public VaccineType getVaccineType(){
+        return recommendedVaccineType;
     }
 
 }

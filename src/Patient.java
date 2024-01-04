@@ -12,8 +12,8 @@ public class Patient {
     private long id;
     private String first_name, last_name;
     private int age;
-    private ArrayList<Allergy> allergies = new ArrayList<>();
-    private ArrayList<Dose> doses = new ArrayList<Dose>();
+    private ArrayList<Allergy> allergies = new ArrayList<>(); //List as patient could have multiple allergies
+    private VaccineType vaccineType;
 
     public Patient(String patientFirstName, String patientLastName, int patientAge, Allergy allergy){
         id = IDSeed;
@@ -48,11 +48,5 @@ public class Patient {
     }
 
     //Function to return available vaccines for the patient
-    public String checkAllergy(){
-        for (Allergy allergy : allergies){
-
-        }
-        return "";
-    }
 
 }

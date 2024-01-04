@@ -1,23 +1,3 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-
-
 # Data Structures And Algorithms Summative Assessment
 
 ## Assessment Backround/Scenario
@@ -43,20 +23,29 @@ A private hospital needs an application to manage COVID-19 vaccination records f
 
 ### 1. Store collected user input data (i.e. name, age, vaccine type and date) based on initial check-up in an appropiate data structure. Sample data provided in Table 1. Store sample data on the different allergies and recommended vaccine types in an appropriate data structure. Sample data is provided in Table 2.
 
-> **store_patient_data(name, age, vaccine type, date)
->       
+Points to consider. Returning patient. Invalid input data.
+
+> class Patient
+>   1
+>   
 >
->
->
->
->
+> **Store-Patient-Data**(name, age, vaccine_type, date, patient_list)
+>   1 for each patient in patient_list:
+>   1   if name == patient.name && age == patient.age:
+>   1       return patient.id
+>   1 Patient p = new Patient
+>   2 p.setName(name)
+>   3 p.setDOB(age)
+>   4 p.setVaccination(vaccine_type, date)
+>   5 patient_list.add(p);
+>   
 >
 >
 >
 >
 >
 
-The first algorithm involves taking 
+The first algorithm involves taking the inputted user information and storing it. I have decided to create an object for the patient and store this object in a list. This is so the list is parsable and to be able to integrate a database should the application grow.
 
 ### 2. Generate the sample report to show how many patients are given each vaccination type, as given in Table 3 below.
 

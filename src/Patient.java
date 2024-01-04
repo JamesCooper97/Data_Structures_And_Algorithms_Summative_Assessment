@@ -2,6 +2,8 @@
  * 
  */
 
+import javafx.beans.property.SimpleStringProperty;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -10,18 +12,20 @@ public class Patient {
     //Declare patient attributes
     private static long IDSeed = 1; //static variable that is defined as 1 on initial start. With each creation of a new patient the ID will count +1 upwards to ensure that ID's are not duplicated
     private long id;
-    private String first_name, last_name;
+    private String firstName, lastName;
     private int age;
-    private ArrayList<Allergy> allergies = new ArrayList<>(); //List as patient could have multiple allergies
+    //private ArrayList<Allergy> allergies = new ArrayList<>(); //List as patient could have multiple allergies
+    private Allergy allergy;
     private VaccineType vaccineType;
 
-    public Patient(String patientFirstName, String patientLastName, int patientAge, Allergy allergy){
-        id = IDSeed;
+    public Patient(String patientFirstName, String patientLastName, int patientAge, Allergy newAllergy){
+        this.id = IDSeed;
         IDSeed++;
-        first_name = patientFirstName;
-        last_name = patientLastName;
-        age = patientAge;
-        allergies.add(allergy);
+        this.firstName = patientFirstName;
+        this.lastName = patientLastName;
+        this.age = patientAge;
+        //allergies.add(allergy);
+        this.allergy = newAllergy;
     }
 
     public long getID(){
@@ -30,12 +34,12 @@ public class Patient {
 
     //Function to return the name of the patient
     public String getFirstName(){
-        return first_name;
+        return firstName;
     }
 
     //Function to return the name of the patient
     public String getLastName(){
-        return last_name;
+        return lastName;
     }
 
     //Function to return the age of the patient
@@ -43,9 +47,16 @@ public class Patient {
         return age;
     }
 
-    public void addAllergy(Allergy allergy){
-        allergies.add(allergy);
+//    public String getAllergy(){
+//        return allergies.get(0).getName();
+//    }
+
+    public String getAllergy(){
+        return allergy.getName();
     }
+    //public void addAllergy(Allergy allergy){
+        //allergies.add(allergy);
+    //}
 
     //Function to return available vaccines for the patient
 

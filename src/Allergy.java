@@ -24,6 +24,10 @@ public class Allergy{
         return recommendedVaccineType;
     }
 
+    public String getName(){
+        return name;
+    }
+
 }
 
 

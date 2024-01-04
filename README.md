@@ -28,17 +28,17 @@ Points to consider. Returning patient. Invalid input data.
 > class Patient
 >   1
 >   
->~~~
-> **Store-Patient-Data**(name, age, vaccine_type, date, patient_list)
->   1 for each patient in patient_list:
->   1   if name == patient.name && age == patient.age:
->   1       return patient.id
->   1 Patient p = new Patient
->   2 p.setName(name)
->   3 p.setDOB(age)
->   4 p.setVaccination(vaccine_type, date)
->   5 patient_list.add(p);
->   ~~~
+~~~
+ **Store-Patient-Data**(name, age, vaccine_type, date, patient_list)
+   1 for each patient in patient_list:
+   1   if name == patient.name && age == patient.age:
+   1       return patient.id
+   1 Patient p = new Patient
+   2 p.setName(name)
+   3 p.setDOB(age)
+   4 p.setVaccination(vaccine_type, date)
+   5 patient_list.add(p);
+   ~~~
 >
 >
 >

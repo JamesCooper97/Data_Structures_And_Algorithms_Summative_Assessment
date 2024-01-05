@@ -27,6 +27,7 @@ Points to consider. Returning patient. Invalid input data.
 ~~~
 class Patient
     
+    
 ~~~   
 ~~~
 **Store-Patient-Data**(name, age, vaccine_type, date, patient_list)

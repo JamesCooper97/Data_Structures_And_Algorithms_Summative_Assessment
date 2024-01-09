@@ -24,7 +24,6 @@ public class Patient {
         this.firstName = patientFirstName;
         this.lastName = patientLastName;
         this.age = patientAge;
-        //allergies.add(allergy);
         this.allergy = newAllergy;
     }
 
@@ -59,5 +58,7 @@ public class Patient {
     //}
 
     //Function to return available vaccines for the patient
-
+    public VaccineType getVaccineType(){
+        return this.allergy.getVaccineType();
+    }
 }

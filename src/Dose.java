@@ -1,8 +1,9 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Dose {
     private VaccineType vaccine;
-    private Date date;
+    private LocalDate date;
     //private Patient patientObject;
     private String patientFirstName;
 
@@ -13,8 +14,8 @@ public class Dose {
 
     private long patientID;
 
-    public Dose(VaccineType vaccineType, Date dateAdministered, Patient patient){
-        this.vaccine = vaccineType;
+    public Dose(LocalDate dateAdministered, Patient patient){
+        this.vaccine = patient.getVaccineType();
         this.date = dateAdministered;
         //this.patientObject = patient;
         this.patientID = patient.getID();
@@ -44,10 +45,10 @@ public class Dose {
         return patientAllergy;
     }
 
-    public String getVaccine(){
-        return vaccine.toString();
+    public VaccineType getVaccine(){
+        return vaccine;
     }
-    public Date getDate(){
+    public LocalDate getDate(){
         return date;
     }
 

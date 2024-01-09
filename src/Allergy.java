@@ -1,12 +1,6 @@
 import java.util.List;
 
 public class Allergy{
-    private static List<String> Allergies = List.of(
-        "Gelatin",
-        "Polyethylene Glycol (PEG)",
-        "Polysorbate 80 (PS80)"
-    );
-
     private static long idSeed = 1;
     private long id;
     private String name;
@@ -14,10 +8,10 @@ public class Allergy{
 
     //Function to construct an allergy
     public Allergy(String allergyName, VaccineType vaccineType){
-        id = idSeed;
-        idSeed++;
-        name = allergyName;
-        recommendedVaccineType = VaccineType.AstraZeneca;
+        this.id = idSeed;
+        this.idSeed++;
+        this.name = allergyName;
+        this.recommendedVaccineType = vaccineType;
     }
 
     public VaccineType getVaccineType(){
@@ -26,6 +20,11 @@ public class Allergy{
 
     public String getName(){
         return name;
+    }
+
+    @Override
+    public String toString(){
+        return this.name;
     }
 
 }

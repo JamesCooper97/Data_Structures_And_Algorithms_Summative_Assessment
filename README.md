@@ -30,7 +30,7 @@ class Patient
     
 ~~~   
 ~~~
-**Store-Patient-Data**(name, age, vaccine_type, date, patient_list)
+StorePatientData(name, age, vaccine_type, date, patient_list)
     for each patient in patient_list:
         if name == patient.name && age == patient.age:
             return patient.id
@@ -40,10 +40,6 @@ class Patient
     p.setVaccination(vaccine_type, date)
     patient_list.add(p);
 ~~~
->
->
->
->
 
 The first algorithm involves taking the inputted user information and storing it. I have decided to create an object for the patient and store this object in a list. This is so the list is parsable and to be able to integrate a database should the application grow.
 
@@ -55,6 +51,33 @@ The first algorithm involves taking the inputted user information and storing it
 |:----:| -------------- | ------- |
 | 1    | AstraZeneca    | 2       |
 | 2    | Pfizer         | 4       |
+
+~~~
+class Vaccine
+    Integer IDSeed = 0; //initial id given to first created value will increase with each subsequently created Vaccine
+    Integer ID;
+    VaccineType vaccineType; //Taken from enum and has possible values PFizer or AstraZeneca
+    Declare integer doseCount
+
+    Vaccine(vaccineType){
+        vaccineType = vaccineType
+        ID = IDSeed
+        IDSeed++;
+    }
+
+    //Has methods
+    increaseDose():
+        doseCount++;
+~~~
+~~~
+VaccineTypes
+VaccineCount(VaccineTypes, DoseList)
+    for each VaccineType in VaccineTypes List:
+        for each Dose in DoseList:
+            if VaccineType = Dose.vaccineType:
+                Vaccine.increaseDose()
+//The number of doses of a particular vaccine can now be retrieved from the vaccine object            
+~~~
 
 ### 3.  Take user input then sort all patients by last name who were given the AstraZeneca/Pfizer vaccine. A sample output is shown in Table 4.
 

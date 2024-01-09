@@ -186,8 +186,14 @@ AllergyCount(Patients, Allergies)
 ~~~
 ThreeDoses(Patient,Doses)
     for Patient in Patients
+    Declare list threeDoses                         //Declares an empty list for patients with 3 doses
+    count = 0
         for dose in doses
-            if dose.patientID is equal to 
+            if dose.patientID is equal to patient.id
+            count++
+        if count = 3
+            threeDoses add patient
+    return threeDoses
 ~~~
 
 ### 7. Search, identify and list the elderly patients (i.e. aged 70 or above) who were given fewer than three doses as given in Table 8.
@@ -197,6 +203,20 @@ ThreeDoses(Patient,Doses)
 | Patient ID | First Name |	Last Name |	Age	| Allergy |	Vaccine Type |	   Dose     |
 |:----------:| ---------- | --------- |:---:|:-------:|:------------:| ----------   |
 |     6      |	Bill      |	Harley    |	70  |  PS80   |	AstraZeneca  |	1           |
+
+~~~
+ElderlyDoses(Patient,Doses)
+    for Patient in Patients
+        Declare list elderlyDoses                         //Declares an empty list for patients with 3 doses
+        count = 0
+        if Patient.age >= 70
+            for dose in doses
+                if dose.patientID is equal to patient.id
+                count++
+            if count < 3
+                elderlyDoses add patient
+    return elderlyDoses
+~~~
 
 ## **Task B:** Construct the application and implement algorithms
 

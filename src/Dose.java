@@ -4,7 +4,7 @@ import java.util.Date;
 public class Dose {
     private VaccineType vaccine;
     private LocalDate date;
-    //private Patient patientObject;
+    private Patient patientObject;
     private String patientFirstName;
 
     private String patientLastName;
@@ -17,7 +17,7 @@ public class Dose {
     public Dose(LocalDate dateAdministered, Patient patient){
         this.vaccine = patient.getVaccineType();
         this.date = dateAdministered;
-        //this.patientObject = patient;
+        this.patientObject = patient;
         this.patientID = patient.getID();
         this.patientFirstName = patient.getFirstName();
         this.patientLastName = patient.getLastName();

@@ -11,6 +11,7 @@ public class Allergy{
     private long id;
     private String name;
     private VaccineType recommendedVaccineType;
+    private int count;
 
     //Function to construct an allergy
     public Allergy(String allergyName, VaccineType vaccineType){
@@ -18,6 +19,7 @@ public class Allergy{
         idSeed++;
         name = allergyName;
         recommendedVaccineType = VaccineType.AstraZeneca;
+        count=0;
     }
 
     public VaccineType getVaccineType(){
@@ -26,6 +28,14 @@ public class Allergy{
 
     public String getName(){
         return name;
+    }
+
+    public void addCount(){
+        count++;
+    }
+
+    public void setCount(int i){
+        count=i;
     }
 
 }

@@ -127,6 +127,32 @@ An algorithm that takes all the Patients with the selected vaccinetype and then 
 
 ~~~
 SortByAge(Patients)
+    N = Patients.length
+
+    for i = N/2-1 to i>0 increment -1              //For loop counting down
+        CreateMaxHeap(Patients,i,0)
+        
+    
+    for i = N-1 to 0 increment -1                       //For loop counting down
+        Patients[i], Patients[0] = Patients[0], Patients[i]     //Swap elements
+        CreateMaxHeap(Patients,i,0)
+    
+    return Patients
+
+CreateMaxHeap(Patients,N,i)
+            root = i                                    //Initialise position i as root
+            leftNodeIndex = 2*i+1                       //Initialise left node index
+            rightNodeIndex = 2*i+2                      //Initialise right node index
+
+            if leftNodeIndex < N and Patients[root].age < Patients[leftNodeIndex].age:
+                root = leftNodeIndex
+        
+            if rightNodeIndex<N and Patients[root].age < Patients[rightNodeIndex].age:
+                root = rightNodeIndex
+
+            if root!=i:
+                Patients[i], Patients[root] = Patients[root], Patients[i]    //Swap elements
+                heapify(Patients,N,root)    
 ~~~
 
 ### 5. Count the number of patients given for each allergy type based on Table 2. A sample output is provided in Table 6.
@@ -139,6 +165,16 @@ SortByAge(Patients)
 | PS80         | 4       |
 | Gelatin         | 4       |
 
+~~~
+AllergyCount(Patients, Allergies)
+    for allergy in Allergies
+    declare allergy.count=0;
+        for patient in Patients
+            if patient.allergy = allergy
+                allergy.addCount;
+    return Allergies
+~~~
+
 ### 6. Search, identify and list those patients who have completed three doses of vaccine as given in Table 7.
 
 **Table 7:** Sample patient data - completed vaccine doses
@@ -146,6 +182,13 @@ SortByAge(Patients)
 | Patient ID | First Name |	Last Name |	Age	| Allergy |	Vaccine Type |	   Dose     |
 |:----------:| ---------- | --------- |:---:|:-------:|:------------:| ----------   |
 |     6      |	Bill      |	Harley    |	70  |  PS80   |	AstraZeneca  |	3           |
+
+~~~
+ThreeDoses(Patient,Doses)
+    for Patient in Patients
+        for dose in doses
+            if dose.patientID is equal to 
+~~~
 
 ### 7. Search, identify and list the elderly patients (i.e. aged 70 or above) who were given fewer than three doses as given in Table 8.
 

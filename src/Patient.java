@@ -24,7 +24,6 @@ public class Patient {
         this.firstName = patientFirstName;
         this.lastName = patientLastName;
         this.age = patientAge;
-        //allergies.add(allergy);
         this.allergy = newAllergy;
     }
 

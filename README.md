@@ -70,7 +70,6 @@ class Vaccine
         doseCount++;
 ~~~
 ~~~
-VaccineTypes
 VaccineCount(VaccineTypes, DoseList)
     for each VaccineType in VaccineTypes List:
         for each Dose in DoseList:
@@ -89,31 +88,78 @@ Enter the choice of vaccine type (AstraZeneca/Pfizer): AstraZeneca
 
 | Patient ID | First Name |	Last Name |	Age	| Allergy |	Vaccine Type |	   Date   |
 |:----------:| ---------- | --------- |:---:|:-------:|:------------:| ---------- |
-|     6      |	Bill      |	Harley    |	23  | PS80 |	AstraZeneca       |	07/21/2021|
-|     5      |	Lily      |	Taylor    |	18  | PEG |	AstraZeneca       |	06/21/2021|
+|     6      |	Bill      |	Harley    |	70  |  PS80   |	AstraZeneca  |	07/21/2021|
+|     5      |	Lily      |	Taylor    |	18  |   PEG   |	AstraZeneca  |	06/21/2021|
+
+~~~
+SortLastName(Patients, VaccineType)
+    N = Patients.length
+    Initilise FinalPatientsArray
+    for I=1 to N-1
+        if patient.VaccineType is VaccineType
+            FinalPatientsArray add Patient
+    P = FinalPatientsArray.length
+    for j=1 to P-1
+        key = FinalPatientsArray[j].lastName
+        k = j-1
+
+        while(k>=0 && (FinalPatientsArray[k].lastName compare with key))
+            FinalPatientArray[k + 1] = FinalPatientArray[k]
+            k = k - 1
+        
+        FinalPatientArray[K+1] = key
+~~~
+
+An algorithm that takes all the Patients with the selected vaccinetype and then sorts them using insertion sort.
 
 ### 4. Give preference to patients based on age who are waiting for their next vaccination based on Table 1. A sample output is provided in Table 5.
 
 **Table 5:** Next vaccination appointment
 
-TABLE 5 HERE
+| Patient ID | First Name |	Last Name |	Age	| Allergy |	Vaccine Type |	   Date   |
+|:----------:| ---------- | --------- |:---:|:-------:|:------------:| ---------- |
+|     6      |	Bill      |	Harley    |	70  |  PS80   |	AstraZeneca  |	07/21/2021|
+|     2      |	Charlie   |	Smith     |	40  | Gelatin |	Pfizer       |	06/15/2021|
+|     4      |	Emmett    |	Miller    |	30  | Gelatin |	Pfizer       |	06/20/2021|
+|     3      |	Mariam    |	Dawson    |	27  | Gelatin |	Pfizer       |	06/17/2021|
+|     1      |	Georgia   |	Roberts   |	23  | Gelatin |	Pfizer       |	06/15/2021|
+|     5      |	Lily      |	Taylor    |	18  |   PEG   |	AstraZeneca  |	06/21/2021|
+
+~~~
+SortByAge(Patients)
+~~~
 
 ### 5. Count the number of patients given for each allergy type based on Table 2. A sample output is provided in Table 6.
 
 **Table 6:** Patient count based on allergy type
 
-TABLE 6 HERE
+|  Allergy Type  |  Total no. of patients  |
+| -------------- | ------- |
+| PEG    | 2       |
+| PS80         | 4       |
+| Gelatin         | 4       |
 
 ### 6. Search, identify and list those patients who have completed three doses of vaccine as given in Table 7.
 
 **Table 7:** Sample patient data - completed vaccine doses
 
-TABLE 7 HERE
+| Patient ID | First Name |	Last Name |	Age	| Allergy |	Vaccine Type |	   Dose     |
+|:----------:| ---------- | --------- |:---:|:-------:|:------------:| ----------   |
+|     6      |	Bill      |	Harley    |	70  |  PS80   |	AstraZeneca  |	3           |
 
 ### 7. Search, identify and list the elderly patients (i.e. aged 70 or above) who were given fewer than three doses as given in Table 8.
 
 **Table 8:** Sample patient data - lowest vaccine doses
 
-TABLE 8 HERE
+| Patient ID | First Name |	Last Name |	Age	| Allergy |	Vaccine Type |	   Dose     |
+|:----------:| ---------- | --------- |:---:|:-------:|:------------:| ----------   |
+|     6      |	Bill      |	Harley    |	70  |  PS80   |	AstraZeneca  |	1           |
 
 ## **Task B:** Construct the application and implement algorithms
+
+**1.** Develop a single Java program that follows coding conventions and enables the user to search, sort, count and provide list of patients waiting for their next vaccination appointments by using algorithms studied in this module, which are run from the command line. The application should be text-based and menu-driven.
+
+**2.** Implement all the algorithms you have created for Task A.
+Note: 
+●	You need to ensure that the user input is validated, and feedback is given when an invalid input is entered.
+●	Test all the implemented algorithms you have created for Task A.

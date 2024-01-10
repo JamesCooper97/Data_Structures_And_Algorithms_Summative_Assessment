@@ -187,11 +187,7 @@ AllergyCount(Patients, Allergies)
 ThreeDoses(Patient,Doses)
     for Patient in Patients
     Declare list threeDoses                         //Declares an empty list for patients with 3 doses
-    count = 0
-        for dose in doses
-            if dose.patientID is equal to patient.id
-            count++
-        if count = 3
+        if patient.doseCount is equal to 3
             threeDoses add patient
     return threeDoses
 ~~~

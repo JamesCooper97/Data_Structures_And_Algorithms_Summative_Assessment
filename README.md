@@ -202,16 +202,11 @@ ThreeDoses(Patient,Doses)
 
 ~~~
 ElderlyDoses(Patient,Doses)
-    for Patient in Patients
-        Declare list elderlyDoses                         //Declares an empty list for patients with 3 doses
-        count = 0
-        if Patient.age >= 70
-            for dose in doses
-                if dose.patientID is equal to patient.id
-                count++
-            if count < 3
-                elderlyDoses add patient
-    return elderlyDoses
+    for Patient in Patients                 c1  n+1
+        Declare list elderlyDoses           c2    n
+        if Patient.age >= 70 && count < 3   c3    n
+            elderlyDoses add patient        c4    n
+    return elderlyDoses                     c5    1
 ~~~
 
 ## **Task B:** Construct the application and implement algorithms
